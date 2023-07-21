@@ -1,0 +1,179 @@
+/* utils */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding: 1em;
+}
+
+/* layout distribution */
+.header {
+  padding: 0 20px;
+  background-color: #1976d2;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 120px);
+}
+
+.footer {
+  height: 70px;
+  background-color: #1976d2;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* header style */
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.logo a {
+  color: #fff;
+}
+
+.header ul {
+  list-style: none;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header ul a {
+  color: white;
+  transition: 0.3s;
+}
+
+.header ul li {
+  padding: 5px;
+}
+
+.header ul li:hover {
+  transform: scale(1.1);
+}
+
+/* hamburger-menu icon style */
+.hamburger-menu-icon {
+  cursor: pointer;
+}
+
+.hamburger-menu-icon div[class*="bar"] {
+  width: 35px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .hamburger-menu-icon .bar1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .hamburger-menu-icon .bar2 {
+  opacity: 0;
+}
+
+.open .hamburger-menu-icon .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+/* menu style */
+.menu {
+  display: none;
+  margin: 0;
+  padding: 0;
+  background-color: #1976d2;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+
+.open .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+.desktop-menu {
+  display: none;
+}
+
+/* main content */
+.main-section {
+  flex: 1;
+  flex-grow: 3;
+  margin-right: 20px;
+  min-width: 200px;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background-color: #f1f1f1;
+  padding: 20px;
+  min-width: 200px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    flex-direction: row;
+  }
+
+  /* remove mobile menu style */
+  .menu {
+    display: flex;
+    position: relative;
+    top: initial;
+    left: initial;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+  }
+
+  .menu ul {
+    display: flex;
+  }
+
+  .menu li {
+    margin-bottom: 0;
+  }
+
+  .hamburger-menu-icon {
+    display: none;
+  }
+}
